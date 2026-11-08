@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering\footnotesize
+\caption{Cost per aggregation round in the $\mathsf{DeFSM}$ architecture ($M=20$, $L=20$, $r=10$, $d=200$), in nonzero entries downloaded, averaged over both datasets and all settings. In $\mathsf{DeFSM}$, the contract computes the 2D point and the weights from $2M$ numbers on-chain, and each client computes the weighted sum. Vote: the agents compute the global aggregate and vote on its hash (for $\mathsf{DeFSM}$, an option for bandwidth-limited clients). Clients: each client computes it from all local aggregates. The other rules cannot run in the contract.}
+\label{tab:comm}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{lcccc}
+\toprule
+Rule & \makecell{Agent\\download} & \makecell{Agent\\work} & Vote & \makecell{Client\\download}\\
+\midrule
+$\mathsf{DeFSM}$ & 200 & $\mathsf{SafeGM}$ on $L$ & --- & 487 (9.3 vectors)\\
+$\mathsf{DeFSM}$, vote & 687 & $\mathsf{SafeGM}$, sum & yes & 89\\
+\midrule
+Agent-GM, vote & 1226 & GM twice & yes & 92\\
+Agent-GM, clients & 200 & GM on $L$ & --- & 1026 (19.9 vectors)\\
+Agent-Trim, vote & 418 & Trim twice & yes & 15\\
+Agent-Trim, clients & 200 & Trim on $L$ & --- & 218 (19.8 vectors)\\
+Agent-Mean, vote & 1201 & Mean twice & yes & 89\\
+Agent-Mean, clients & 200 & Mean on $L$ & --- & 1001 (19.9 vectors)\\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,24 @@
+\begin{table}[t]
+\centering\small
+\caption{Reliability over all 20 attack settings (5 attacks $\times$ $\beta_c\in\{0.2,0.3\}$ $\times$ $\beta_a\in\{0.1,0.3\}$), 3 seeds, $\alpha=0.5$. All methods except FSM-GM run in the $\mathsf{DeFSM}$ architecture; Agent-Trim is told the true Byzantine rates unless stated. FSM-GM is the centralized ideal reference ($\beta_c$ only, 10 settings). Worst $\sigma$: largest deficit of any run. Worst run / worst setting / avg: smallest $Q$ of any run, smallest average $Q$ of any setting, average $Q$. Bold: best in column.}
+\label{tab:summary}
+\setlength{\tabcolsep}{2.2pt}
+\begin{tabular}{lcccccccc}
+\toprule
+& \multicolumn{4}{c}{CIFAR10} & \multicolumn{4}{c}{PathMNIST}\\
+\cmidrule(lr){2-5}\cmidrule(lr){6-9}
+Method & \makecell{worst\\$\sigma$} & \makecell{worst\\run} & \makecell{worst\\setting} & \makecell{avg\\$Q$} & \makecell{worst\\$\sigma$} & \makecell{worst\\run} & \makecell{worst\\setting} & \makecell{avg\\$Q$}\\
+\midrule
+$\mathsf{DeFSM}$ & 0.41 & 0.63 & 0.71 & 0.84 & 0.44 & 0.61 & \textbf{0.71} & 0.84\\
+\midrule
+Agent-GM & \textbf{0.35} & 0.64 & 0.76 & 0.89 & \textbf{0.39} & \textbf{0.66} & 0.71 & 0.88\\
+Agent-Trim & 1.00 & \textbf{0.78} & \textbf{0.87} & \textbf{1.00} & 1.00 & 0.36 & 0.52 & \textbf{0.89}\\
+Agent-Mean & 0.50 & 0.39 & 0.59 & 0.75 & 0.50 & 0.47 & 0.60 & 0.76\\
+\midrule\multicolumn{9}{l}{\emph{Centralized ideal reference}}\\
+FSM-GM & 0.27 & 0.73 & 0.78 & 0.92 & 0.30 & 0.73 & 0.80 & 0.92\\
+\midrule\multicolumn{9}{l}{\emph{Agent-Trim told a wrong Byzantine rate (true $\pm0.1$)}}\\
+Agent-Trim, $-0.1$ & 1.00 & 0.68 & 0.79 & 0.98 & 0.99 & 0.47 & 0.57 & 0.87\\
+Agent-Trim, $+0.1$ & 1.00 & 0.60 & 0.75 & 0.95 & 1.00 & 0.06 & 0.35 & 0.78\\
+\bottomrule
+\end{tabular}
+\end{table}

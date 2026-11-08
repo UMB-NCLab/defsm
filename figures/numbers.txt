@@ -1,0 +1,8 @@
+CIFAR10: avg Q  DeFSM 0.84  Agent-GM 0.89  FSM-GM 0.92
+PathMNIST: avg Q  DeFSM 0.84  Agent-GM 0.88  FSM-GM 0.92
+DeFSM retains 91.5% of FSM-GM; Agent-GM retains 96.5%
+client download: DeFSM 488 entries (9.3 aggregates), Agent-GM 1027; agent download with vote: Agent-GM 1227 vs DeFSM 200
+deficit vs quality (DeFSM, Agent-GM, Agent-Mean): Spearman -0.86; DeFSM -0.75, Agent-GM -0.85, Agent-Trim -0.60, Agent-Mean -0.84
+CIFAR10 at beta_c=beta_a=0.3: DeFSM 0.79, agent-level mean 0.67
+PathMNIST at beta_c=beta_a=0.3: DeFSM 0.79, agent-level mean 0.68
+client aggregates vs M=10,20,40: DeFSM 5.7, 9.3, 17.7; all 10, 20, 39
